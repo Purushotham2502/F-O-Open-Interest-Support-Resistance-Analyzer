@@ -176,11 +176,11 @@ def get_new_token():
     subprocess.run(["python", "authcode.py"], check=True)
 
     
-client_id = "1U5QOSSO5M-100"
 
-# Step 1: Load the current tokens
 tokens = load_tokens("fyers_tokens.json")
+client_id = tokens.get("client_id")  # load client_id here instead of hardcoded string
 access_token = tokens.get("access_token")
+
 # Step 2: Check if access token is valid
 if not is_token_valid(client_id, access_token):
     print("Access token expired or invalid. Fetching a new access token...")
@@ -295,3 +295,4 @@ df_results = pd.DataFrame(results_sorted)
 output_filename = "stocks_near_intraday_support_resistance.xlsx"
 df_results.to_excel(output_filename, index=False)
 print(f"Saved stocks near intraday support/resistance to {output_filename}")
+
