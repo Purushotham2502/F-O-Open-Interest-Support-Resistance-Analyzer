@@ -44,6 +44,18 @@ python authcode.py
 └── stocks_near_intraday_support_resistance.xlsx
 # Generated output report
 
+# Chrome Browser Configuration for Authentication
+
+If you want the app to open Chrome with a specific user profile, update the following paths in the code (e.g., `authcode.py`):
+
+- `chrome_path`: Full path to your Chrome executable (default on Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe`)
+- `profile_path`: Path to your Chrome user data folder (usually under `C:\Users\<YourUsername>\AppData\Local\Google\Chrome\User Data`)
+
+Replace `<YourUsername>` with your actual Windows username.
+
+If unsure, you can comment these lines out and the app will open authorization URL in the default web browser automatically.
+
+
 
 ## Output
 - `stocks_near_intraday_support_resistance.xlsx`: Excel report of support/resistance levels.
