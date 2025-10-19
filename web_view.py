@@ -8,7 +8,7 @@ import time
 import webbrowser
 from fyers_apiv3 import fyersModel
 
-CLIENT_ID = "1U5QOSSO5M-100"
+CLIENT_ID = "Your_CLIENT_ID"
 OUTPUT_XLSX = "stocks_near_intraday_support_resistance.xlsx"
 MAIN_SCRIPT = "OI_Support&Resistance.py"
 TOKENS_FILE = "fyers_tokens.json"
@@ -120,3 +120,4 @@ def open_browser():
 if __name__ == "__main__":
     threading.Thread(target=open_browser, daemon=True).start()
     app.run(host="127.0.0.1", port=5000, debug=False)
+
