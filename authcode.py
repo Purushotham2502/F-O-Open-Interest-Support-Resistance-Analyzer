@@ -7,7 +7,6 @@ from fyers_apiv3 import fyersModel
 
 
 tokens = load_tokens("fyers_tokens.json")
-CLIENT_ID= tokens.get("client_id")  # load client_id here instead of hardcoded string
 access_token = tokens.get("access_token")
 # ---------- Fyers Auth Details ----------
 tokens = load_tokens("fyers_tokens.json")
@@ -90,4 +89,5 @@ if "access_token" in response and "refresh_token" in response:
     save_tokens(TOKEN_FILE, tokens)
 else:
     print(" Failed to get tokens:", response)
+
 
