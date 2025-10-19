@@ -1,0 +1,56 @@
+F&O Open Interest Support & Resistance Analyzer
+
+## Overview
+A Python tool and local web service that identifies support and resistance levels for F&O stocks using open interest data, with automated token management and GUI launcher.
+
+## Prerequisites
+- Python 3.8+
+- Fyers API account (create an “App” under your Fyers developer dashboard)
+  - Note your **App ID** and **App Secret**
+
+## Installation
+1. Clone the repository.
+2. Install dependencies:
+
+APP_ID = "your_app_id"
+APP_SECRET = "your_app_secret"
+REDIRECT_URI = what you set during your Fyers API app creation
+
+## First-Run Authentication
+1. Run the auth flow:
+python authcode.py
+
+2. Your default browser will open the Fyers login/consent page.  
+3. After approving, copy the **auth code** from the redirected URL.  
+4. Paste the auth code into the terminal prompt.  
+5. `authcode.py` will exchange it for access and refresh tokens and save them in `fyers_tokens.json`.
+
+## Usage
+1. Prepare `stock_list.xlsx` with symbols and parameters.
+2. Launch the tool via GUI:
+
+3. If your token is expired, the terminal will prompt again for the auth code.
+4. After successful auth, the local web interface will open automatically  showing a table of stocks nearest support/resistance based on open interest.
+
+## Project Structure
+├── Start_OI_Server.bat # Windows launcher
+├── run_script_gui.py # GUI entry point
+├── authcode.py # Manual auth code handling
+├── fyers_tokens.json # Stored tokens
+├── requirements.txt # Dependencies
+├── stock_list.xlsx # Input Excel template
+├── OI_Support-Resistance.py # Core analytics and report generation
+├── web_view.py # Local web service for display
+└── stocks_near_intraday_support_resistance.xlsx
+# Generated output report
+
+
+## Output
+- `stocks_near_intraday_support_resistance.xlsx`: Excel report of support/resistance levels.
+- Local web dashboard with interactive table.
+
+## Notes
+- Keep `fyers_tokens.json` and your API credentials secure.
+- For any issues, delete `fyers_tokens.json` and rerun `authcode.py` to reauthenticate.
+
+
