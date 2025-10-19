@@ -3,9 +3,16 @@ import json
 from urllib.parse import urlparse, parse_qs
 from fyers_apiv3 import fyersModel
 
+
+
+
+tokens = load_tokens("fyers_tokens.json")
+CLIENT_ID= tokens.get("client_id")  # load client_id here instead of hardcoded string
+access_token = tokens.get("access_token")
 # ---------- Fyers Auth Details ----------
-CLIENT_ID = "1U5QOSSO5M-100"
-CLIENT_SECRET = "QVLIJUG803"  # Replace with your secret key
+tokens = load_tokens("fyers_tokens.json")
+CLIENT_ID= tokens.get("client_id")  # load client_id here instead of hardcoded string
+CLIENT_SECRET = "YourClient_secret"  # Replace with your secret key
 REDIRECT_URI = "https://www.google.com/"  # Must match your app settings
 STATE = "sample_state"
 GRANT_TYPE = "authorization_code"
@@ -83,3 +90,4 @@ if "access_token" in response and "refresh_token" in response:
     save_tokens(TOKEN_FILE, tokens)
 else:
     print(" Failed to get tokens:", response)
+
