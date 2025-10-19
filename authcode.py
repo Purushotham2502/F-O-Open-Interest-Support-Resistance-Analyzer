@@ -43,7 +43,7 @@ auth_url = (
 
 # ---------- Chrome paths ----------
 chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-profile_path = r"C:\Users\kodid\AppData\Local\Google\Chrome\User Data"
+profile_path = r"C:\Users\USERNAME\AppData\Local\Google\Chrome\User Data" #Replace this path
 
 # ---------- Open Chrome to authorize ----------
 subprocess.Popen([chrome_path, f"--user-data-dir={profile_path}", auth_url])
@@ -89,5 +89,6 @@ if "access_token" in response and "refresh_token" in response:
     save_tokens(TOKEN_FILE, tokens)
 else:
     print(" Failed to get tokens:", response)
+
 
 
