@@ -1,4 +1,5 @@
 @echo off
-cd /d "C:\Users\kodid\OneDrive\Desktop\Auth+opion chain"
+REM Change the path below to your local project directory before running
+cd /d "C:\Users\YourUsername\Path\To\Auth+opion chain"
 python web_view.py
 pause
