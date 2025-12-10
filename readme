@@ -33,13 +33,12 @@ python authcode.py
 4. After successful auth, the local web interface will open automatically  showing a table of stocks nearest support/resistance based on open interest.
 
 ## Project Structure
-├── Start_OI_Server.bat # Windows launcher
-├── run_script_gui.py # GUI entry point
+
 ├── authcode.py # Manual auth code handling
 ├── fyers_tokens.json # Stored tokens
 ├── requirements.txt # Dependencies
 ├── stock_list.xlsx # Input Excel template
-├── OI_Support-Resistance.py # Core analytics and report generation
+├── Main.py # Core analytics and report generation
 ├── web_view.py # Local web service for display
 └── stocks_near_intraday_support_resistance.xlsx
 # Generated output report
